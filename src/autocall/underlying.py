@@ -35,7 +35,7 @@ class Underlying:
     --------
     >>> Underlying("SX5E", spot=100.0, vol=0.20, div=0.03)
     """
-    def __init__(self, name, spot, vol, div = 0.00):
+    def __init__(self, name : str, spot : float, vol :float, div :float = 0.00) -> None:
         if type(name) != str:
                 raise TypeError(f"Name must be a string")
         if spot <= 0:

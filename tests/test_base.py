@@ -3,7 +3,7 @@
 import pytest
 import numpy as np
 
-from autocall.Products.base import Product
+from autocall.products.base import Product
 
 class DummyProduct(Product):
 

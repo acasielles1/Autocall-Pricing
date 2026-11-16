@@ -12,11 +12,9 @@ from autocall.underlying import Underlying
 
 def test_valid_creation_stores_attributes():
     """A valid Underlying stores every input as an attribute."""
-    # Arrange + Act: build an object with valid market data
+
     u = Underlying("SX5E", spot=100.0, vol=0.20, div=0.03)
 
-    # Assert: each attribute holds exactly the value passed in.
-    # Exact equality is safe here: no arithmetic was performed on the values.
     assert u.name == "SX5E"
     assert u.spot == 100.0
     assert u.vol == 0.20
@@ -32,7 +30,7 @@ def test_default_dividend_is_zero():
 
 def test_zero_volatility_is_accepted():
     """Boundary case: vol = 0 is valid (deterministic limit of the model)."""
-    # If the constructor raised here, pytest would report the test as failed
+
     u = Underlying("SX5E", spot=100.0, vol=0.0)
 
     assert u.vol == 0.0
